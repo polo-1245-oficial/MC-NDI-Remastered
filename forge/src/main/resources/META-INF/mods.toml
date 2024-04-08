@@ -6,9 +6,9 @@ license = "GNU GPLv3"
 [[mods]]
 modId = "mcndi"
 version = "${version}"
-displayName = "MC NDI"
-authors = "Rushmead"
+displayName = "MC NDI REMASTERED"
+authors = "Polo_1245"
 description = '''
-This mod adds NDI to Minecraft.
+MC NDI Remastered is a Minecraft modification that enhances your streaming experience by providing direct support for outputting Minecraft gameplay as NDI sources.
 '''
-#logoFile = ""
+logoFile = ""

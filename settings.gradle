@@ -1,10 +1,10 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        maven {
+        /*maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
-        }
+        }*/
         maven {
             name = 'Sponge Snapshots'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
@@ -13,4 +13,5 @@ pluginManagement {
 }
 
 rootProject.name = 'MCNDI'
-include("Common", "Fabric", "Forge")
+include("Common", "Forge")
+//include("Fabric") no support at the moment
