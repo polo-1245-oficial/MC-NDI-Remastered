@@ -11,7 +11,7 @@ MC NDI Remastered is a Minecraft modification that enhances your streaming exper
 
 - **NDI Support**: Output Minecraft gameplay directly as NDI sources.
 - **Camera Placement**: Press R to place a camera and right-click to rename it.
-- **Clear Functionality**: Press Y to clear all cameras.
+- **Clear Functionality**: Press F to clear all cameras.
 
 ## Dependencies
 
