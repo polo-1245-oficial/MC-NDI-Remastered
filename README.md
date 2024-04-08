@@ -17,7 +17,7 @@ Demo video: https://raw.githubusercontent.com/polo-1245-oficial/MC-NDI-Remastere
 
 To utilize MC NDI Remastered, ensure the following dependencies are met:
 
-- **NDI Runtime**: NDI Tools or NDI SDK must be installed. Visit the [NDI website](https://ndi.studio) to obtain the necessary runtime.
+- **NDI Runtime**: NDI Tools or NDI SDK must be installed. Visit the [NDI website](https://ndi.video) to obtain the necessary runtime.
 - **Fabric API**: Required when using Fabric as the modloader.
 
 ## Technical Details
