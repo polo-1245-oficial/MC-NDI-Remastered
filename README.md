@@ -1,34 +1,31 @@
-# MC NDI 
+# MC NDI Remastered
 
-[![](http://cf.way2muchnoise.eu/title/457015.svg)](https://www.curseforge.com/minecraft/mc-mods/mc-ndi)
+## Overview
 
-Adding support for directly outputting Minecraft as NDI sources. 
-Currently, outputs the main screen by default using MC - Username, you can also add more cameras that have their own output sources. 
+MC NDI Remastered is a Minecraft modification that enhances your streaming experience by providing direct support for outputting Minecraft gameplay as NDI sources. With this mod, you can easily integrate Minecraft footage into your live streams or video productions. 
 
-Press R to place a camera, right click to rename. 
+![Demo](https://raw.githubusercontent.com/polo-1245-oficial/MC-NDI-Remastered/main/media/example.mp4)
 
-Press Y to clear all cameras.
+
+### Features:
+
+- **NDI Support**: Output Minecraft gameplay directly as NDI sources.
+- **Camera Placement**: Press R to place a camera and right-click to rename it.
+- **Clear Functionality**: Press F to clear all cameras.
 
 ## Dependencies
 
-Requires NDI Runtime to be installed (NDI Tools or NDI SDK will work for this, find on the [NDI website](https://ndi.tv))
+To utilize MC NDI Remastered, ensure the following dependencies are met:
 
-Requires Fabric API when on Fabric.
+- **NDI Runtime**: NDI Tools or NDI SDK must be installed. Visit the [NDI website](https://ndi.tv) to obtain the necessary runtime.
+- **Fabric API**: Required when using Fabric as the modloader.
 
-For 1.16 only, requires Architectury API for both [Forge](https://www.curseforge.com/minecraft/mc-mods/architectury-forge) and [Fabric](https://www.curseforge.com/minecraft/mc-mods/architectury-fabric). 
+## Technical Details
 
-## Under the hood
+MC NDI Remastered leverages the Devolay library by WalkerKnapp under the hood, which is licensed under Apache-2.0. This library facilitates seamless integration of NDI functionality into Minecraft, enhancing your streaming capabilities.
 
-Under the hood this uses the [Devolay library by WalkerKnapp](https://github.com/WalkerKnapp/devolay) which is licensed under Apache-2.0. 
+## Credits
 
-## License
-
-This is licensed under the [GNU GPLv3 license](https://github.com/Rushmead/Fabric-NDI/blob/master/LICENSE)
-
-## Contributing
-
-Pull Requests are welcome and encouraged! Found a bug and know how to fix it? PR It! Want a feature and know how to make it happen? PR It!
-
-If you find a bug in the mod please open an issue on the Issues page with as much information as you can provide.
-
-If you have any questions for me, join [my discord](https://rushmead.live/discord).
+- **Original Mod**: Developed by Rushmead, licensed under GPL-3.0.
+- **Devolay Library**: Developed by WalkerKnapp, licensed under Apache-2.0.
+  
