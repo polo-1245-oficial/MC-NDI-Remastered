@@ -4,6 +4,9 @@
 
 MC NDI Remastered is a Minecraft modification that enhances your streaming experience by providing direct support for outputting Minecraft gameplay as NDI sources. With this mod, you can easily integrate Minecraft footage into your live streams or video productions. 
 
+![Demo](https://raw.githubusercontent.com/polo-1245-oficial/MC-NDI-Remastered/main/media/example.mp4)
+
+
 ### Features:
 
 - **NDI Support**: Output Minecraft gameplay directly as NDI sources.
