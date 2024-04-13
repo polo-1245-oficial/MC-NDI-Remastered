@@ -4,7 +4,7 @@
 
 MC NDI Remastered is a Minecraft modification that enhances your streaming experience by providing direct support for outputting Minecraft gameplay as NDI sources. With this mod, you can easily integrate Minecraft footage into your live streams or video productions. 
 
-![Demo](https://raw.githubusercontent.com/polo-1245-oficial/MC-NDI-Remastered/main/media/example.mp4)
+Demo video: https://raw.githubusercontent.com/polo-1245-oficial/MC-NDI-Remastered/main/media/example.mp4
 
 
 ### Features:
@@ -17,7 +17,7 @@ MC NDI Remastered is a Minecraft modification that enhances your streaming exper
 
 To utilize MC NDI Remastered, ensure the following dependencies are met:
 
-- **NDI Runtime**: NDI Tools or NDI SDK must be installed. Visit the [NDI website](https://ndi.tv) to obtain the necessary runtime.
+- **NDI Runtime**: NDI Tools or NDI SDK must be installed. Visit the [NDI website](https://ndi.video) to obtain the necessary runtime.
 - **Fabric API**: Required when using Fabric as the modloader.
 
 ## Technical Details
