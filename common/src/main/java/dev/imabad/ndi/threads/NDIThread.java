@@ -15,7 +15,8 @@ public class NDIThread extends Thread {
     private AtomicReference<ByteBuffer> byteBuffer;
     private AtomicReference<DevolayVideoFrame> videoFrame;
     private AtomicBoolean needsFrame, hasFlipped;
-    public AtomicInteger width, height;
+    public AtomicInteger width;
+    public AtomicInteger height;
     public boolean running = true;
 
     public NDIThread(DevolaySender sender, ByteBuffer image, int width, int height){
@@ -27,16 +28,11 @@ public class NDIThread extends Thread {
         needsFrame = new AtomicBoolean(true);
         hasFlipped = new AtomicBoolean(false);
         DevolayVideoFrame videoFrame1 = new DevolayVideoFrame();
-        /*if(width <= 0) {
-            width = 1920;
-        }
-        if(height <= 0) {
-            height = 1080; - no funciona naaada
-        } */
+
         videoFrame1.setResolution(width, height);
         videoFrame1.setFourCCType(DevolayFrameFourCCType.RGBX);
         videoFrame1.setLineStride(width * 4);
-        videoFrame1.setFrameRate(60, 1);
+        videoFrame1.setFrameRate(30, 1); //fps aqui
         videoFrame.set(videoFrame1);
     }
 
@@ -46,23 +42,7 @@ public class NDIThread extends Thread {
     }
 
     public void updateVideoFrame(int width, int height){
-        /*if(width <= 0) {
-            this.width.set(1920);
-        } else {
-            this.width.set(width);
-        }
-        if(height <= 0) {
-            this.height.set(1080);
-        } else {
-            this.height.set(height);
-        }
 
-        if(width <= 0) {
-            width = 1920;
-        }
-        if(height <= 0) {
-            height = 1080; - aquí menos me cago en dios
-        } */
         DevolayVideoFrame videoFrame1 = videoFrame.get();
         videoFrame1.setResolution(width, height);
         videoFrame1.setLineStride(width * 4);

@@ -66,15 +66,15 @@ public class GameRenderHook {
     public void render(RenderTarget framebuffer, Window window, Player player, float tickDelta, boolean isPaused){
         boolean hasResChanged = false;
         if(mainOutput == null){
-            pboManager = new PBOManager(window.getScreenWidth(), window.getScreenHeight());
+            pboManager = new PBOManager(1920, 1080);
             pboManager.readPixelData(framebuffer);
-            mainOutput = new NDIThread(mainSender, pboManager.buffer, window.getScreenWidth(), window.getScreenHeight());
+            mainOutput = new NDIThread(mainSender, pboManager.buffer, 1920, 1080);
             mainOutput.start();
         } else if (mainOutput.getNeedsFrame().get()) {
-            if (mainOutput.width.get() != window.getScreenWidth() || mainOutput.height.get() != window.getScreenHeight()) {
+            if (mainOutput.width.get() != 1920 || mainOutput.height.get() != 1080) {
                 pboManager.cleanUp();
-                pboManager = new PBOManager(window.getScreenWidth(), window.getScreenHeight());
-                mainOutput.updateVideoFrame(window.getScreenWidth(), window.getScreenHeight());
+                pboManager = new PBOManager(1920, 1080);
+                mainOutput.updateVideoFrame(1920, 1080);
                 hasResChanged = true;
             }
             if(mainOutput.sender.get().getConnectionCount(0) > 0){
@@ -91,13 +91,13 @@ public class GameRenderHook {
             for(CameraEntity e : NDIMod.getCameraManager().cameraEntities){
                 PBOManager pboManager;
                 if(!entityBuffers.containsKey(e.getUUID())){
-                    pboManager = new PBOManager(window.getScreenWidth(), window.getScreenHeight());
+                    pboManager = new PBOManager(1920, 1080);
                     entityBuffers.put(e.getUUID(), pboManager);
                 } else {
                     pboManager = entityBuffers.get(e.getUUID());
                     if(hasResChanged){
                         pboManager.cleanUp();
-                        pboManager = new PBOManager(window.getScreenWidth(), window.getScreenHeight());
+                        pboManager = new PBOManager(1920, 1080);
                         entityBuffers.put(e.getUUID(), pboManager);
                     }
                 }
@@ -107,7 +107,7 @@ public class GameRenderHook {
                     DevolayMetadataFrame metadataFrame = new DevolayMetadataFrame();
                     metadataFrame.setData("<ndi_capabilities ntk_ptz=\"true\"/>");
                     sender.addConnectionMetadata(metadataFrame);
-                    ndiThread = new NDIThread(sender, pboManager.buffer, window.getScreenWidth(), window.getScreenHeight());
+                    ndiThread = new NDIThread(sender, pboManager.buffer, 1920, 1080);
                     NDIMod.getCameraManager().cameras.put(e.getUUID(), ndiThread);
                     NDIControlThread ndiControlThread = new NDIControlThread(sender, e);
                     NDIMod.getCameraManager().cameraControls.put(e.getUUID(), ndiControlThread);
@@ -116,7 +116,7 @@ public class GameRenderHook {
                 } else {
                     ndiThread = NDIMod.getCameraManager().cameras.get(e.getUUID());
                     if(hasResChanged){
-                        ndiThread.updateVideoFrame(window.getScreenWidth(), window.getScreenHeight());
+                        ndiThread.updateVideoFrame(1920, 1080);
                     }
                 }
                 if(e.isAlive() && ndiThread.getNeedsFrame().get() && ndiThread.sender.get().getConnectionCount(0) > 0) {
@@ -142,12 +142,12 @@ public class GameRenderHook {
                     }
                     RenderTarget entityFramebuffer;
                     if(!entityFramebuffers.containsKey(e.getUUID())){
-                        entityFramebuffer = new TextureTarget(window.getScreenWidth(), window.getScreenHeight(), true, Minecraft.ON_OSX);;
+                        entityFramebuffer = new TextureTarget(1920, 1080, true, Minecraft.ON_OSX);;
                         entityFramebuffers.put(e.getUUID(), entityFramebuffer);
                     } else {
                         entityFramebuffer = entityFramebuffers.get(e.getUUID());
                         if(hasResChanged){
-                            entityFramebuffer.resize(window.getScreenWidth(), window.getScreenHeight(), Minecraft.ON_OSX);
+                            entityFramebuffer.resize(1920, 1080, Minecraft.ON_OSX);
                         }
                     }
                     entityFramebuffer.bindWrite(true);

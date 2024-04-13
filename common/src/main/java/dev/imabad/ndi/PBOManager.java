@@ -21,8 +21,10 @@ public class PBOManager {
 
     public PBOManager(int width, int height)
     {
-        this.width = width;
-        this.height = height;
+        this.width = 1920;
+        this.height = 1080;
+        width = 1920;
+        height = 1080;
         buffer = BufferUtils.createByteBuffer(width * height * BYTES_PER_PIXEL);
         drawBuffer = new TextureTarget(width, height, true, Minecraft.ON_OSX);
         initPbos(2);
@@ -41,7 +43,7 @@ public class PBOManager {
     {
         int pbo = GL15.glGenBuffers();
         GL15.glBindBuffer(GL21.GL_PIXEL_PACK_BUFFER, pbo);
-        GL15.glBufferData(GL21.GL_PIXEL_PACK_BUFFER, width * height * BYTES_PER_PIXEL, GL15.GL_STREAM_READ);
+        GL15.glBufferData(GL21.GL_PIXEL_PACK_BUFFER, 1920 * 1080 * BYTES_PER_PIXEL, GL15.GL_STREAM_READ);
         GL15.glBindBuffer(GL21.GL_PIXEL_PACK_BUFFER, 0);
         return pbo;
     }
